@@ -1,0 +1,80 @@
+.frameworks-page {
+  min-height: 100vh;
+  padding: 2.5rem 6vw 3rem;
+  color: var(--text-main);
+}
+
+.fw-section {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+}
+
+.fw-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fw-section h1 {
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+}
+
+.fw-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.fw-section p {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.7rem;
+}
+
+/* Diagram-style layout */
+.fw-diagram {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.fw-layer {
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: radial-gradient(circle at left top, #020617, #020617 60%, #000 100%);
+}
+
+.fw-layer h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+}
+
+.fw-layer p {
+  margin-bottom: 0;
+}
+
+/* Lists */
+.fw-list {
+  padding-left: 1.1rem;
+}
+
+.fw-list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.4rem;
+}
+
+.fw-list strong {
+  color: var(--text-main);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .frameworks-page {
+    padding: 2rem 5vw 2.5rem;
+  }
+}

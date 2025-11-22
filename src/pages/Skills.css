@@ -1,0 +1,64 @@
+.skills-page {
+  min-height: 100vh;
+  padding: 2.5rem 6vw 3rem;
+  color: var(--text-main);
+}
+
+.skills-hero {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+}
+
+.skills-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+}
+
+.skills-hero p {
+  max-width: 720px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+}
+
+.skill-group {
+  background: var(--card-bg);
+  border-radius: 1.1rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  padding: 1.1rem 1rem 1rem;
+}
+
+.skill-group h2 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.skill-group ul {
+  padding-left: 1.1rem;
+}
+
+.skill-group li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+
+.skills-grid {
+  gap: 1.4rem;          /* a bit more breathing room */
+  margin-bottom: 1rem;  /* space before page end */
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .skills-page {
+    padding: 2rem 5vw 2.5rem;
+  }
+}

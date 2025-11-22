@@ -1,0 +1,78 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 6vw;
+  background: rgba(2, 6, 23, 0.95); /* dark glass */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+}
+
+.navbar-logo {
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #e5e7eb;
+  opacity: 0.8;
+}
+
+.navbar-links a.active {
+  opacity: 1;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.15rem;
+}
+
+.navbar-links a:hover {
+  opacity: 1;
+}
+
+/* Active link – brighter + underline bar */
+.navbar-links a.active {
+  opacity: 1;
+  color: #e5e7eb;
+}
+
+.navbar-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 4vw;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .navbar-links {
+    width: 100%;
+    overflow-x: auto;
+    gap: 1rem;
+    font-size: 0.8rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .navbar-links a {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,33 @@
+/* src/pages/Resume.css */
+.resume-page {
+  padding: 3rem 6vw;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.resume-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.resume-hero p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.resume-button {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.resume-button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
