@@ -73,11 +73,10 @@ function Experience() {
       role: "Customer Service Coordinator",
       period: "Jan 2015 – Mar 2016",
       responsibilities: [
-        "Handled client communication regarding logistics operations and documentation.",
-        "Developed strong customer handling and problem-solving skills under time constraints.",
-        "Improved communication effectiveness leading to smoother resolution cycles."
+        "Prepared and verified logistics documentation for international cargo operations.",
+        "Maintained accuracy in creating shipment bills."
       ],
-      tech: ["Client Management", "Issue Resolution", "Business Communication"]
+      tech: ["Documentation Handling", "Process Coordination", "Time-Bound Execution"]
     }
   ];
 

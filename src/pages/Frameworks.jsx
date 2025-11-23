@@ -8,58 +8,62 @@ function Frameworks() {
       <section className="fw-section">
         <h1>Frameworks & Architecture</h1>
         <p>
-          A high-level view of how I structure automation frameworks. Below is
-          the architecture of the mobile automation framework I built for the
-          Samco Trading App.
+          A high-level overview of how I design automation frameworks,
+          particularly for complex enterprise applications. Below is the
+          architecture of a mobile trading application framework I built,
+          supporting both Android and iOS.
         </p>
       </section>
 
-      {/* Samco Framework Overview */}
+      {/* Framework Overview */}
       <section className="fw-section">
-        <h2>Samco Mobile Automation Framework</h2>
+        <h2>Mobile Automation Framework (Trading App)</h2>
         <p>
-          Cross-platform Appium framework for Android and iOS, designed to run
-          on local emulators/simulators, integrated with Jenkins, Allure, and
-          Slack for continuous feedback.
+          Cross-platform Appium-based framework for Android and iOS, designed to
+          run on local emulators/simulators. Integrated with Jenkins, Allure, and
+          Slack for CI execution and reporting.
         </p>
 
         <div className="fw-diagram">
           <div className="fw-layer">
             <h3>Test Layer</h3>
             <p>
-              TestNG test classes defining test flows for trading scenarios such
-              as login, order placement, funds, and watchlists.
+              TestNG test classes defining functional flows such as login,
+              trade placement, funds transfer, and watchlist validations.
             </p>
           </div>
+
           <div className="fw-layer">
             <h3>Business & Helper Layer</h3>
             <p>
-              Reusable methods to perform flows like app launch, navigation,
-              search, placing orders, handling market timings, and validations.
+              Reusable methods for app launch, navigation, data interaction,
+              order placement, market condition handling, and UI validations.
             </p>
           </div>
+
           <div className="fw-layer">
             <h3>Base & Driver Layer</h3>
             <p>
-              ThreadLocal driver management, platform-specific setup for Android
-              and iOS, Appium server interaction, screen recording, log
-              capture, and teardown logic.
+              ThreadLocal driver management, platform-specific capabilities,
+              Appium server configuration, video logging, log capture, and cleanup.
             </p>
           </div>
+
           <div className="fw-layer">
             <h3>Utility Layer</h3>
             <p>
-              Custom waits, dynamic locators, configuration handling, ADB
-              helpers, deep link handling, image comparison helpers, and
-              validation utilities.
+              Custom waits, dynamic locator strategies, configuration loader,
+              ADB integration, deep linking, visual comparison utilities, and
+              validation helpers.
             </p>
           </div>
+
           <div className="fw-layer">
             <h3>Integration Layer</h3>
             <p>
-              Allure report generation, Slack notifications, Jenkins job
-              integration, and test artefact (logs, screenshots, videos)
-              publishing.
+              Allure report generation, Slack-based notifications,
+              Jenkins pipeline execution, and publishing of artefacts (logs,
+              videos, screenshots).
             </p>
           </div>
         </div>
@@ -70,42 +74,38 @@ function Frameworks() {
         <h2>Key Design Choices</h2>
         <ul className="fw-list">
           <li>
-            <strong>Cross-platform support:</strong> Same framework supports
-            Android and iOS, with platform-specific capabilities and element
-            handling abstracted behind helpers.
-          </li>
-           <li>
-            <strong>Parallel execution:</strong> The framework works
-            on multiple emulators executing different tests using TestNG 
-            to reduce the execution time.
+            <strong>Multi-platform support:</strong> One framework handles both
+            Android and iOS using abstracted helpers and capability models.
           </li>
           <li>
-            <strong>Thread-safe drivers:</strong> Uses ThreadLocal to keep
-            Appium driver instances isolated per thread/run.
+            <strong>Parallel execution:</strong> Built to run tests simultaneously
+            on multiple virtual devices using TestNG, reducing execution time.
           </li>
           <li>
-            <strong>Dynamic element handling:</strong> Locators and flows
-            account for live market values and UI changes instead of hardcoded
-            static text.
+            <strong>Thread-safe drivers:</strong> Driver lifecycle is handled using
+            ThreadLocal to avoid interference during parallel executions.
           </li>
           <li>
-            <strong>Execution lifecycle control:</strong> Suite and method level
-            hooks manage start/stop of recording, logs, drivers and navigation.
+            <strong>Dynamic UI handling:</strong> Locator strategies consider live
+            market data and runtime changes instead of relying on static text.
           </li>
           <li>
-            <strong>Visibility & feedback:</strong> All test artefacts are
-            collected and pushed through Allure + Slack for easy review after
-            runs.
+            <strong>Lifecycle management:</strong> Framework manages app launch,
+            teardown, logging, and navigation via suite and method level hooks.
+          </li>
+          <li>
+            <strong>Reporting & feedback:</strong> All execution artefacts are sent
+            through Allure and Slack for immediate visibility.
           </li>
         </ul>
       </section>
 
       {/* Future Enhancements */}
       <section className="fw-section">
-        <h2>Planned Improvements</h2>
+        <h2>Planned Enhancements</h2>
         <ul className="fw-list">
-          <li>Refining module-wise utilities for easier reuse.</li>
-          <li>Exploring migration of some flows to Playwright for web parts.</li>
+          <li>Module-level abstraction for improved reusability.</li>
+          <li>Evaluating Playwright integration for web-based flows.</li>
         </ul>
       </section>
     </main>
