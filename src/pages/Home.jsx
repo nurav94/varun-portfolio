@@ -2,11 +2,35 @@
 import "./Home.css";
 import profileImg from "../assets/varun-profile.jpg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 
 function Home() {
   const navigate = useNavigate();
+  const [showEggMsg, setShowEggMsg] = useState(false);
+  const [toastPosition, setToastPosition] = useState({ x: 0, y: 0 });
+
+
+ const triggerEasterEgg = (e) => {
+  setToastPosition({ x: e.clientX, y: e.clientY });
+  setShowEggMsg(true);
+
+  // 👇 GA tracking added here
+  if (window.gtag) {
+    gtag('event', 'easter_egg_triggered', {
+      event_category: 'interaction',
+      event_label: 'Bruhh clicked image',
+      value: 1
+    });
+  }
+
+  setTimeout(() => setShowEggMsg(false), 2500);
+};
+
+
 
   return (
+   
     <main className="home-page">
       <div className="home-container">
         {/* LEFT CONTENT */}
@@ -43,16 +67,22 @@ function Home() {
 
         {/* RIGHT VISUAL */}
         {/* RIGHT VISUAL – PROFILE PHOTO */}
-<div className="home-visual">
-  <div className="profile-wrapper">
-    <img
-      src={profileImg}
-      alt="Varun Kumar"
-      className="profile-photo"
-    />
-    <div className="profile-tag">QA Automation Engineer</div>
-  </div>
-</div>
+      <div className="home-visual">
+        <div className="profile-wrapper">
+          <img
+              src={profileImg}
+              alt="Varun Kumar"
+              className="profile-photo"
+              onClick={triggerEasterEgg}
+              onContextMenu={(e) => {
+                e.preventDefault();
+                triggerEasterEgg();
+              }}
+              onTouchStart={(e) => triggerEasterEgg()}
+            />
+          <div className="profile-tag">QA Automation Engineer</div>
+        </div>
+      </div>
 
       </div>
 
@@ -157,6 +187,17 @@ function Home() {
           <span>Slack API</span>
         </div>
       </section>
+      {showEggMsg && (
+  <div
+    className="easter-toast"
+    style={{
+      top: toastPosition.y - 40 + "px",
+      left: toastPosition.x + "px",
+    }}
+  >
+    Bruhhh… don’t poke me bruhh 😒
+  </div>
+)}
     </main>
   );
 }

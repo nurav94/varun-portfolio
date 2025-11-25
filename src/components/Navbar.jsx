@@ -47,11 +47,11 @@ function Navbar() {
         onClick={stopPropagation}
       >
         <NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink>
+        <NavLink to="/resume" onClick={() => setMenuOpen(false)}>Resume</NavLink>
         <NavLink to="/experience" onClick={() => setMenuOpen(false)}>Experience</NavLink>
         <NavLink to="/projects" onClick={() => setMenuOpen(false)}>Projects</NavLink>
         <NavLink to="/skills" onClick={() => setMenuOpen(false)}>Skills</NavLink>
         <NavLink to="/frameworks" onClick={() => setMenuOpen(false)}>Frameworks</NavLink>
-         <NavLink to="/resume" onClick={() => setMenuOpen(false)}>Resume</NavLink>
         {/* <NavLink to="/reports" onClick={() => setMenuOpen(false)}>Reports</NavLink> */}
         <NavLink to="/blog" onClick={() => setMenuOpen(false)}>Blog</NavLink>
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
