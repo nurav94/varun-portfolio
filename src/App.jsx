@@ -12,6 +12,13 @@ import Contact from "./pages/Contact.jsx";
 import Blog from "./pages/Blog.jsx";
 import Reports from "./pages/Reports.jsx";
 import Footer from "./components/Footer.jsx";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Craft from "./pages/Craft";
+
+
+
+
+
 
 function Placeholder({ title }) {
   return (
@@ -40,6 +47,15 @@ function App() {
         <Route path="/blog" element={<Blog/>} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
+       <Route
+  path="/craft"
+  element={
+    <ProtectedRoute>
+      <Craft />
+    </ProtectedRoute>
+  }
+/>
+        
       </Routes>
        <Footer />
     </div>

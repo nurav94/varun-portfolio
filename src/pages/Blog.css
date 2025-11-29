@@ -44,3 +44,14 @@
   font-size: 0.9rem;
   color: var(--text-muted);
 }
+
+.blog-card.next {
+  cursor: pointer;
+  touch-action: manipulation; /* Prevents zoom on double-tap */
+  user-select: none;
+}
+.blog-card.next {
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}

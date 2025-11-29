@@ -17,7 +17,7 @@ function Home() {
 
   // 👇 GA tracking added here
   if (window.gtag) {
-    gtag('event', 'easter_egg_triggered', {
+    gtag('event', 'pic_easter_egg_triggered', {
       event_category: 'interaction',
       event_label: 'Bruhh clicked image',
       value: 1

@@ -55,4 +55,47 @@ button {
   color: #bfdbfe;
   border-bottom: 1px solid rgba(37, 99, 235, 0.3);
 }
+/* Full blackout overlay */
+.craft-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeBlackout 0.8s forwards;
+}
 
+/* Fade to black smoothly */
+@keyframes fadeBlackout {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Loader Text */
+.craft-loader {
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: #a5b4fc;
+}
+
+/* Blinking cursor */
+.craft-loader::after {
+  content: " _";
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.1%, 100% { opacity: 0; }
+}
+
+
+#craftOverlay {
+  transition: opacity 0.3s ease;
+}
